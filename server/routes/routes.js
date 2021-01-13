@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../../database/pg.js');
 const redis = require('redis');
+require('dotenv').config();
 
 const client = redis.createClient(process.env.REDIS_PORT);
 
