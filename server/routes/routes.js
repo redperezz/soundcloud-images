@@ -4,10 +4,11 @@ const db = require('../../database/pg.js');
 const redis = require('redis');
 require('dotenv').config();
 
-const client = redis.createClient(process.env.REDIS_PORT);
+const client = redis.createClient();
 client.on('error', (err) => {
-  console.log('Error:', err);
+  console.log(err);
 });
+
 
 /* ----- GET BAND DATA ----- */
 

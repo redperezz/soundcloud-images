@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS bands;
+DROP DATABASE IF EXISTS postgres;
 
-CREATE DATABASE bands;
+CREATE DATABASE postgres;
 
-\c bands;
+\c postgres;
 
 CREATE TEMPORARY TABLE band_data (
   id SERIAL PRIMARY KEY,
@@ -16,7 +16,43 @@ CREATE TEMPORARY TABLE band_data (
 );
 
 COPY band_data (band_id, song_id, song_name, band_name, followers, tracks, band_image_url)
-FROM '/Users/freddieperez-cruz/RPT-23-SDC/soundcloud-images/csv/data.csv'
+FROM '/Users/freddieperez-cruz/RPT-23-SDC/soundcloud-images/csv/data1.csv'
+DELIMITER ','
+CSV HEADER;
+COPY band_data (band_id, song_id, song_name, band_name, followers, tracks, band_image_url)
+FROM '/Users/freddieperez-cruz/RPT-23-SDC/soundcloud-images/csv/data2.csv'
+DELIMITER ','
+CSV HEADER;
+COPY band_data (band_id, song_id, song_name, band_name, followers, tracks, band_image_url)
+FROM '/Users/freddieperez-cruz/RPT-23-SDC/soundcloud-images/csv/data3.csv'
+DELIMITER ','
+CSV HEADER;
+COPY band_data (band_id, song_id, song_name, band_name, followers, tracks, band_image_url)
+FROM '/Users/freddieperez-cruz/RPT-23-SDC/soundcloud-images/csv/data4.csv'
+DELIMITER ','
+CSV HEADER;
+COPY band_data (band_id, song_id, song_name, band_name, followers, tracks, band_image_url)
+FROM '/Users/freddieperez-cruz/RPT-23-SDC/soundcloud-images/csv/data5.csv'
+DELIMITER ','
+CSV HEADER;
+COPY band_data (band_id, song_id, song_name, band_name, followers, tracks, band_image_url)
+FROM '/Users/freddieperez-cruz/RPT-23-SDC/soundcloud-images/csv/data6.csv'
+DELIMITER ','
+CSV HEADER;
+COPY band_data (band_id, song_id, song_name, band_name, followers, tracks, band_image_url)
+FROM '/Users/freddieperez-cruz/RPT-23-SDC/soundcloud-images/csv/data7.csv'
+DELIMITER ','
+CSV HEADER;
+COPY band_data (band_id, song_id, song_name, band_name, followers, tracks, band_image_url)
+FROM '/Users/freddieperez-cruz/RPT-23-SDC/soundcloud-images/csv/data8.csv'
+DELIMITER ','
+CSV HEADER;
+COPY band_data (band_id, song_id, song_name, band_name, followers, tracks, band_image_url)
+FROM '/Users/freddieperez-cruz/RPT-23-SDC/soundcloud-images/csv/data9.csv'
+DELIMITER ','
+CSV HEADER;
+COPY band_data (band_id, song_id, song_name, band_name, followers, tracks, band_image_url)
+FROM '/Users/freddieperez-cruz/RPT-23-SDC/soundcloud-images/csv/data10.csv'
 DELIMITER ','
 CSV HEADER;
 

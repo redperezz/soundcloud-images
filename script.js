@@ -6,6 +6,7 @@ const failRate = new Rate('failed requests');
 
 export let options = {
   stages: [
+    // { duration: '100s', rps: 1000, target: 100 },
     { duration: '2m', target: 100 },
     { duration: '5m', target: 100 },
     { duration: '2m', target: 500 },
