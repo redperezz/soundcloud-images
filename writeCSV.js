@@ -29,34 +29,23 @@ const getUniqueBandName = () => {
   }
 };
 
-const writeCsvFile = async (fileCount) => {
-  if (fileCount <= 10) {
-    try {
-      console.log(`Writing csv file ${fileCount}.`);
-      writer.pipe(fs.createWriteStream(`./csv/data${fileCount}.csv`));
-      let bandIds = [];
-      let bandNames =[];
-      for (let i = 0; i < 1000000; i++) {
-       await writer.write({
-          band_id: i + 1,
-          song_id: i + 1,
-          song_name: getUniqueSongName(),
-          band_name: getUniqueBandName(),
-          followers: getRandomNum(10000000),
-          tracks: getRandomNum(2500000),
-          band_image_url: bands.bandImages[getRandomNum(150)],
-        })
-      }
-      console.log(`Done writing data to csv file ${fileCount}.`);
-      if (fileCount <= 10) {
-        writeCsvFile(fileCount + 1);
-      }
-    } catch(err) {
-      console.log(err);
-    }
-  } else {
-    writer.end();
+const writeCsvFile = async () => {
+  writer.pipe(fs.createWriteStream('./csv/data.csv'));
+  let bandIds = [];
+  let bandNames =[];
+  for (let i = 0; i < 10000000; i++) {
+   await writer.write({
+      band_id: i + 1,
+      song_id: i + 1,
+      song_name: getUniqueSongName(),
+      band_name: getUniqueBandName(),
+      followers: getRandomNum(10000000),
+      tracks: getRandomNum(2500000),
+      band_image_url: bands.bandImages[getRandomNum(150)],
+    })
   }
+  writer.end();
+  console.log('Done writing data to csv file');
 };
 
-writeCsvFile(1);
+writeCsvFile();
