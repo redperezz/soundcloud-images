@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS postgres;
+DROP DATABASE IF EXISTS bands;
 
-CREATE DATABASE postgres;
+CREATE DATABASE bands;
 
-\c postgres;
+\c bands;
 
 CREATE TEMPORARY TABLE band_data (
   id SERIAL PRIMARY KEY,

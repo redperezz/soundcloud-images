@@ -9,7 +9,7 @@
   },
   "scripts": {
     "csv": "node --max-old-space-size=8192 writeCSV.js",
-    "seedPostgres": "psql < ./database/schema.sql",
+    "seedPostgres": "psql --host ec2-18-236-87-97.us-west-2.compute.amazonaws.com --port 5432 --password --username postgres < /Users/freddieperez-cruz/RPT-23-SDC/soundcloud-images/database/schema.sql",
     "build": "webpack --mode=development -d --watch",
     "prod": "webpack --mode=production -d --watch",
     "start": "nodemon server/server.js",
